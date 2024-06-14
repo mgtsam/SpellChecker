@@ -15,12 +15,12 @@ namespace SpellChecker.ConsoleApplication {
             return (ConvertToHashSet(splitedInput[0]), ConvertToArray(splitedInput[1]));
         }
 
-        public static bool TryParse(string input, out (HashSet<string> dictionary, string[] text) sequences) {
+        public static bool TryParse(string input, out (HashSet<string> dictionary, string[] text) dictionaryTextPair) {
             try {
-                sequences = Parse(input);
+                dictionaryTextPair = Parse(input);
             }
             catch (Exception) {
-                sequences = default;
+                dictionaryTextPair = default;
                 return false;
             }
             return true;

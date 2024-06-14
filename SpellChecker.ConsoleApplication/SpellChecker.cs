@@ -66,8 +66,8 @@ namespace SpellChecker.ConsoleApplication {
                     if (char.ToLower(first[i - 1]).Equals(char.ToLower(second[j - 1])))
                         opt[i, j] = opt[i - 1, j - 1];
                     else {
-                        int deleteCost = 1 + opt[i - 1, j];
-                        int insertCost = 1 + opt[i, j - 1];
+                        var deleteCost = 1 + opt[i - 1, j];
+                        var insertCost = 1 + opt[i, j - 1];
 
                         if (i > 1 && opt[i - 1, j] == 1 + opt[i - 2, j]) // если удаление второе подряд
                             deleteCost = maxCost;
